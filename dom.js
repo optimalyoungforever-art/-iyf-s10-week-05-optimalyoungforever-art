@@ -119,3 +119,17 @@ console.log("Has target:", navLink.hasAttribute("target"));
 
 // Remove attribute
 navLink.removeAttribute("target");
+// STYLES
+const container = document.querySelector(".container");
+
+// Inline styles
+container.style.backgroundColor = "#f0f0f0";
+container.style.padding = "30px";
+container.style.borderRadius = "8px";
+
+// Multiple styles
+Object.assign(container.style, {
+    backgroundColor: "#333",
+    color: "white",
+    padding: "20px"
+});
