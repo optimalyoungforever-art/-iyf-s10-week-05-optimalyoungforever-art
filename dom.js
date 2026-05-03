@@ -145,3 +145,15 @@ const articleEl2 = document.querySelector("article");
 
 // Add to the end
 articleEl2.appendChild(newParagraph);
+// INSERTING ELEMENTS
+
+const firstParagraph = articleEl2.querySelector("p");
+
+// Insert before first paragraph
+articleEl2.insertBefore(newParagraph, firstParagraph);
+
+// Modern methods
+articleEl2.prepend(newParagraph);       // first
+articleEl2.append(newParagraph);        // last
+firstParagraph.before(newParagraph);    // before
+firstParagraph.after(newParagraph);     // after
