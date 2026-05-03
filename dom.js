@@ -243,3 +243,39 @@ formEl.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Form submitted!");
 });
+// CLICK COUNTER
+
+let count = 0;
+
+// Create elements
+const counterDisplay = document.createElement("p");
+const incrementBtn = document.createElement("button");
+const decrementBtn = document.createElement("button");
+const resetBtn = document.createElement("button");
+
+// Set text
+counterDisplay.textContent = `Count: ${count}`;
+incrementBtn.textContent = "+";
+decrementBtn.textContent = "-";
+resetBtn.textContent = "Reset";
+
+// Add to page
+document.body.append(counterDisplay, incrementBtn, decrementBtn, resetBtn);
+
+// Events
+incrementBtn.addEventListener("click", () => {
+    count++;
+    counterDisplay.textContent = `Count: ${count}`;
+});
+
+decrementBtn.addEventListener("click", () => {
+    if (count > 0) {
+        count--;
+        counterDisplay.textContent = `Count: ${count}`;
+    }
+});
+
+resetBtn.addEventListener("click", () => {
+    count = 0;
+    counterDisplay.textContent = `Count: ${count}`;
+});
