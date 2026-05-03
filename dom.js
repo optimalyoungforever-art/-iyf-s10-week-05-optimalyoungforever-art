@@ -293,3 +293,12 @@ document.addEventListener("click", function (event) {
     // Stop bubbling
     event.stopPropagation();
 });
+// KEYBOARD EVENTS
+
+document.addEventListener("keydown", function (event) {
+    console.log("Key:", event.key);
+    console.log("Code:", event.code);
+    console.log("Shift:", event.shiftKey);
+    console.log("Ctrl:", event.ctrlKey);
+    console.log("Alt:", event.altKey);
+});
