@@ -355,3 +355,18 @@ parent.addEventListener("click", () => {
 child.addEventListener("click", () => {
     console.log("Child clicked");
 });
+// EVENT DELEGATION
+
+const navList = document.querySelector(".nav-list");
+
+navList.addEventListener("click", function (event) {
+    // Check if a list item was clicked
+    if (event.target.matches("li")) {
+        console.log("LI clicked:", event.target);
+    }
+
+    // Or if link clicked
+    if (event.target.matches("a")) {
+        console.log("Link clicked:", event.target.textContent);
+    }
+});
