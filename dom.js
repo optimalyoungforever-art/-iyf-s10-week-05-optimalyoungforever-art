@@ -197,3 +197,29 @@ function addNavItem(text, href) {
 // Test it
 addNavItem("Blog", "/blog");
 addNavItem("Portfolio", "/portfolio");
+// BASIC EVENTS
+
+// Create button
+const button = document.createElement("button");
+button.textContent = "Click Me";
+document.body.appendChild(button);
+
+// Event listener (anonymous function)
+button.addEventListener("click", function () {
+    console.log("Button clicked!");
+});
+
+// Arrow function
+button.addEventListener("click", () => {
+    console.log("Clicked again!");
+});
+
+// Named function
+function handleClick() {
+    console.log("Handled!");
+}
+
+button.addEventListener("click", handleClick);
+
+// Remove event listener
+button.removeEventListener("click", handleClick);
