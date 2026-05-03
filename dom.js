@@ -179,3 +179,21 @@ clone.querySelector("a").textContent = "New Link";
 
 // Append clone
 document.querySelector(".nav-list").appendChild(clone);
+// FUNCTION TO ADD NAV ITEMS
+
+function addNavItem(text, href) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+
+    link.textContent = text;
+    link.href = href;
+    link.className = "nav-link";
+
+    li.appendChild(link);
+
+    document.querySelector(".nav-list").appendChild(li);
+}
+
+// Test it
+addNavItem("Blog", "/blog");
+addNavItem("Portfolio", "/portfolio");
