@@ -157,3 +157,13 @@ articleEl2.prepend(newParagraph);       // first
 articleEl2.append(newParagraph);        // last
 firstParagraph.before(newParagraph);    // before
 firstParagraph.after(newParagraph);     // after
+// REMOVING ELEMENTS
+
+// Remove footer
+const footerEl = document.querySelector("footer");
+footerEl.remove();
+
+// Remove last nav item
+const navEl = document.querySelector("nav");
+const lastItem = navEl.querySelector("li:last-child");
+lastItem.parentElement.removeChild(lastItem);
