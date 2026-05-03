@@ -63,3 +63,24 @@ console.log("Previous sibling:", article.previousElementSibling);
 // Descendants
 const navLinksInside = nav.querySelectorAll("a");
 console.log("Nav links (descendants):", navLinksInside);
+// 1. Select the header, then navigate to the nav inside it
+const headerEl = document.querySelector("header");
+const navFromHeader = headerEl.querySelector("nav");
+console.log("Nav from header:", navFromHeader);
+
+// 2. Select the first nav-link, then get its parent li
+const firstNav = document.querySelector(".nav-link");
+const parentLi = firstNav.parentElement;
+console.log("Parent li:", parentLi);
+
+// 3. Select the article, then get its next sibling (section)
+const articleEl = document.querySelector("article");
+console.log("Article next sibling:", articleEl.nextElementSibling);
+
+// 4. Select the ul, then get all its child li elements
+const ul = document.querySelector("ul");
+console.log("UL children (li):", ul.children);
+
+// 5. Start from the footer and navigate up to the body
+const footer = document.querySelector("footer");
+console.log("Footer parent:", footer.parentElement); // body
