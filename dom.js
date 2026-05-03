@@ -404,3 +404,55 @@ taskList.addEventListener("click", function (event) {
         event.target.classList.toggle("completed");
     }
 });
+// FORM HANDLING
+
+const form = document.getElementById("contact-form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+
+// Show error
+function showError(input, message) {
+    input.classList.add("error");
+
+    let error = input.nextElementSibling;
+    if (!error || !error.classList.contains("error-message")) {
+        error = document.createElement("small");
+        error.className = "error-message";
+        input.after(error);
+    }
+
+    error.textContent = message;
+}
+
+// Clear error
+function clearError(input) {
+    input.classList.remove("error");
+
+    const error = input.nextElementSibling;
+    if (error && error.classList.contains("error-message")) {
+        error.remove();
+    }
+}
+
+// Name validation
+nameInput.addEventListener("input", function (event) {
+    const value = event.target.value;
+
+    if (value.length < 2) {
+        showError(nameInput, "Name must be at least 2 characters");
+    } else {
+        clearError(nameInput);
+    }
+});
+
+// Email validation
+emailInput.addEventListener("input", function (event) {
+    const value = event.target.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(value)) {
+        showError(emailInput, "Please enter a valid email");
+    } else {
+        clearError(emailInput);
+    }
+});
