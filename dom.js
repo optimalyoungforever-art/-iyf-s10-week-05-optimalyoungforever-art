@@ -323,3 +323,35 @@ document.addEventListener("keydown", function (event) {
         form.requestSubmit();
     }
 });
+// EVENT BUBBLING DEMO
+
+// Create elements
+const grandparent = document.createElement("div");
+const parent = document.createElement("div");
+const child = document.createElement("div");
+
+grandparent.id = "grandparent";
+parent.id = "parent";
+child.id = "child";
+
+grandparent.textContent = "Grandparent";
+parent.textContent = "Parent";
+child.textContent = "Child";
+
+// Nest elements
+parent.appendChild(child);
+grandparent.appendChild(parent);
+document.body.appendChild(grandparent);
+
+// Add listeners
+grandparent.addEventListener("click", () => {
+    console.log("Grandparent clicked");
+});
+
+parent.addEventListener("click", () => {
+    console.log("Parent clicked");
+});
+
+child.addEventListener("click", () => {
+    console.log("Child clicked");
+});
