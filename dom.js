@@ -223,3 +223,23 @@ button.addEventListener("click", handleClick);
 
 // Remove event listener
 button.removeEventListener("click", handleClick);
+// EVENT TYPES
+
+const inputField = document.querySelector("#name");
+const formEl = document.querySelector("#contact-form");
+
+// Mouse event
+button.addEventListener("mouseenter", () => {
+    console.log("Mouse entered button");
+});
+
+// Keyboard event
+inputField.addEventListener("keydown", (event) => {
+    console.log("Key pressed:", event.key);
+});
+
+// Form event
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Form submitted!");
+});
