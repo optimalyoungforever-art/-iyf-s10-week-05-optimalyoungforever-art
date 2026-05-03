@@ -370,3 +370,37 @@ navList.addEventListener("click", function (event) {
         console.log("Link clicked:", event.target.textContent);
     }
 });
+// DELEGATED TASK LIST
+
+const taskList = document.createElement("ul");
+document.body.appendChild(taskList);
+
+// Add sample tasks
+function addTask(text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.style.marginLeft = "10px";
+
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+}
+
+// Sample tasks
+addTask("Task 1");
+addTask("Task 2");
+
+// ONE event listener (delegation)
+taskList.addEventListener("click", function (event) {
+    // Delete task
+    if (event.target.tagName === "BUTTON") {
+        event.target.parentElement.remove();
+    }
+
+    // Toggle completed
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("completed");
+    }
+});
