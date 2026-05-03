@@ -279,3 +279,17 @@ resetBtn.addEventListener("click", () => {
     count = 0;
     counterDisplay.textContent = `Count: ${count}`;
 });
+// EVENT OBJECT
+
+document.addEventListener("click", function (event) {
+    console.log("Target:", event.target);
+    console.log("Current Target:", event.currentTarget);
+    console.log("Type:", event.type);
+    console.log("Position:", event.clientX, event.clientY);
+
+    // Prevent default (will matter more with links/forms)
+    event.preventDefault();
+
+    // Stop bubbling
+    event.stopPropagation();
+});
