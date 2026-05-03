@@ -93,3 +93,14 @@ console.log("innerText:", mainHeading.innerText);
 
 // Modifying text
 mainHeading.textContent = "New Title";
+// HTML CONTENT
+const articleSection = document.querySelector("article");
+
+// Reading HTML
+console.log("Article HTML:", articleSection.innerHTML);
+
+// Modifying HTML
+articleSection.innerHTML = `
+    <h2>Updated Article</h2>
+    <p>This is new content.</p>
+`;
