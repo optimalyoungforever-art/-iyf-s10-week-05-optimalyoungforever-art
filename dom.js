@@ -456,3 +456,26 @@ emailInput.addEventListener("input", function (event) {
         clearError(emailInput);
     }
 });
+// FORM SUBMISSION
+
+function isValid(data) {
+    return data.name.length >= 2 && data.email.includes("@");
+}
+
+function showSuccess(message) {
+    alert(message);
+}
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    console.log("Form data:", data);
+
+    if (isValid(data)) {
+        showSuccess("Form submitted successfully!");
+        form.reset();
+    }
+});
