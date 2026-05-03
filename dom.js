@@ -44,3 +44,22 @@ console.log("First nav link:", firstNavLink);
 // 7. The last paragraph
 const lastParagraph = document.querySelector("p:last-of-type");
 console.log("Last paragraph:", lastParagraph);
+// Select nav
+const nav = document.querySelector("nav");
+
+// Parent
+console.log("Nav parent:", nav.parentElement);
+
+// Children
+console.log("Nav children:", nav.children);
+console.log("First child:", nav.firstElementChild);
+console.log("Last child:", nav.lastElementChild);
+
+// Siblings
+const article = document.querySelector("article");
+console.log("Next sibling (section):", article.nextElementSibling);
+console.log("Previous sibling:", article.previousElementSibling);
+
+// Descendants
+const navLinksInside = nav.querySelectorAll("a");
+console.log("Nav links (descendants):", navLinksInside);
