@@ -104,3 +104,18 @@ articleSection.innerHTML = `
     <h2>Updated Article</h2>
     <p>This is new content.</p>
 `;
+// ATTRIBUTES
+const navLink = document.querySelector(".nav-link");
+
+// Get attribute
+console.log("Href (getAttribute):", navLink.getAttribute("href"));
+console.log("Href (property):", navLink.href);
+
+// Set attribute
+navLink.setAttribute("href", "https://example.com");
+
+// Check attribute
+console.log("Has target:", navLink.hasAttribute("target"));
+
+// Remove attribute
+navLink.removeAttribute("target");
