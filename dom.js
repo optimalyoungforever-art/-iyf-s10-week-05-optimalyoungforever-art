@@ -84,3 +84,12 @@ console.log("UL children (li):", ul.children);
 // 5. Start from the footer and navigate up to the body
 const footer = document.querySelector("footer");
 console.log("Footer parent:", footer.parentElement); // body
+// TEXT CONTENT
+const mainHeading = document.querySelector("h1");
+
+// Reading text
+console.log("textContent:", mainHeading.textContent);
+console.log("innerText:", mainHeading.innerText);
+
+// Modifying text
+mainHeading.textContent = "New Title";
