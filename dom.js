@@ -167,3 +167,15 @@ footerEl.remove();
 const navEl = document.querySelector("nav");
 const lastItem = navEl.querySelector("li:last-child");
 lastItem.parentElement.removeChild(lastItem);
+// CLONING ELEMENTS
+
+const navItem = document.querySelector(".nav-link").parentElement;
+
+// Deep clone
+const clone = navItem.cloneNode(true);
+
+// Modify clone
+clone.querySelector("a").textContent = "New Link";
+
+// Append clone
+document.querySelector(".nav-list").appendChild(clone);
