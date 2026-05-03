@@ -133,3 +133,15 @@ Object.assign(container.style, {
     color: "white",
     padding: "20px"
 });
+// CREATING ELEMENTS
+
+// Create new paragraph
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "This is a new paragraph!";
+newParagraph.className = "content highlight";
+
+// Select article
+const articleEl2 = document.querySelector("article");
+
+// Add to the end
+articleEl2.appendChild(newParagraph);
