@@ -302,3 +302,24 @@ document.addEventListener("keydown", function (event) {
     console.log("Ctrl:", event.ctrlKey);
     console.log("Alt:", event.altKey);
 });
+// KEYBOARD SHORTCUTS
+
+document.addEventListener("keydown", function (event) {
+    // Ctrl + S
+    if (event.ctrlKey && event.key === "s") {
+        event.preventDefault();
+        alert("Saved!");
+    }
+
+    // Escape → clear form
+    if (event.key === "Escape") {
+        const form = document.getElementById("contact-form");
+        form.reset();
+    }
+
+    // Ctrl + Enter → submit form
+    if (event.ctrlKey && event.key === "Enter") {
+        const form = document.getElementById("contact-form");
+        form.requestSubmit();
+    }
+});
